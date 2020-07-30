@@ -82,12 +82,12 @@ renderComments(comments)
         return(
             <div className="row">
            
-           {this.renderDish(this.props.dishes)}
+           {this.renderDish(this.props.dish)}
            
            
            <div className="col-12 col-md">
 
-               {this.renderComments(this.props.dishes)}
+               {this.renderComments(this.props.dish)}
            </div>
            </div>
 
