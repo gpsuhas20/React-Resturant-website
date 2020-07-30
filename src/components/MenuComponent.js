@@ -18,7 +18,7 @@ class Menu extends Component{
         {
             return(
                 <div key={dish.id} className="col-12 col-md-5  m-1">
-                <Card onClick={()=>this.props.onClick(dish.id)}>
+                <Card onClick={()=>this.props.onClickp(dish.id)}>{/* here onclickp is a function passed */}
                     <CardImg src={dish.image} alt={dish.name}>
                         
                     </CardImg>

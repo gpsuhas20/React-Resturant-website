@@ -45,7 +45,7 @@ class Main extends Component
         <Menu dishes={this.state.dishes}
         
         
-        onClick={(dishId)=>
+        onClickp={(dishId)=>
             {
                 this.onDishSelect(dishId)
             }}/>{/* we are passing the values of the dishes to the menu component */}
@@ -53,6 +53,7 @@ class Main extends Component
         dish.id===this.state.selectedDish
 
             )[0]}/>
+            {/*<Dishdetail dish={this.state.selectedDish} and in menu component on click function pass dish instead of dishid here passing dishid makes it faster to execute. */}
         </div>
         </div>
     )
