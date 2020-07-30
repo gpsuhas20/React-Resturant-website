@@ -45,7 +45,7 @@ class Main extends Component
         <Menu dishes={this.state.dishes}
         
         
-        onClickp={(dishId)=>
+        onClick={(dishId)=>
             {
                 this.onDishSelect(dishId)
             }}/>{/* we are passing the values of the dishes to the menu component */}
