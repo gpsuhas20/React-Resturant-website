@@ -22,7 +22,7 @@ import {Card,CardImg,CardImgOverlay,CardText,CardBody,CardTitle} from 'reactstra
 
         )
     }
-    
+    // or simply we can use a function Menu also instead of arrow function
     const Menu=(props)=>
     {
         
