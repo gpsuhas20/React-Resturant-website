@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import {Navbar,NavbarBrand} from 'reactstrap';
+
 import Menu from './MenuComponent';
 import {DISHES} from '../shared/dishes';
 import Dishdetail from './DishdetailComponent'
-
-
+import Header from './HeaderComponent'
+import Footer from './FooterComponent'
 
 class Main extends Component
 {
@@ -33,15 +33,9 @@ class Main extends Component
   {
     return(
       <div className="App">
-        <Navbar dark color="primary">
-          <div className="container">
-            <NavbarBrand href="/">
-              Ristorante Con Fusion
-            </NavbarBrand>
-          </div>
-        </Navbar>
-        <div className="container">
         
+       
+        <Header/>
         <Menu dishes={this.state.dishes}
         
         
@@ -54,7 +48,7 @@ class Main extends Component
 
             )[0]}/>
             {/*<Dishdetail dish={this.state.selectedDish} and in menu component on click function pass dish instead of dishid here passing dishid makes it faster to execute. */}
-        </div>
+      <Footer/>
         </div>
     )
   }
