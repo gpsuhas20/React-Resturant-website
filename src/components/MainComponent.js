@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-
+import Home from './HomeComponent'
 import Menu from './MenuComponent';
 import {DISHES} from '../shared/dishes';
 import Dishdetail from './DishdetailComponent'
 import Header from './HeaderComponent'
 import Footer from './FooterComponent'
-
+import {Switch,Route,Redirect} from 'react-router-dom'
 class Main extends Component
 {
   constructor(props)
@@ -13,41 +13,32 @@ class Main extends Component
     super(props)
     this.state={
       dishes:DISHES,
-      selectedDish:null
-      
+     
       /* importing the data and storing it in the state property.*/
     }
   }
 
-  onDishSelect(dishId)
-    {
-        // this.setState in a methdd
-        this.setState(
-           {selectedDish:dishId}
-        );
-        
-        
-    }
+ 
 
   render()
   {
+    const HomePage=()=>
+    {
+      
+    return(
+    <Home/>)
+    }
     return(
       <div className="App">
         
        
         <Header/>
-        <Menu dishes={this.state.dishes}
-        
-        
-        onClick={(dishId)=>
-            {
-                this.onDishSelect(dishId)
-            }}/>{/* we are passing the values of the dishes to the menu component */}
-        <Dishdetail dish={this.state.dishes.filter((dish)=>
-        dish.id===this.state.selectedDish
-
-            )[0]}/>
-            {/*<Dishdetail dish={this.state.selectedDish} and in menu component on click function pass dish instead of dishid here passing dishid makes it faster to execute. */}
+       <Switch>
+         <Route path="/home" component={HomePage}/>
+           <Route exact path="/menu" component={()=><Menu dishes={this.state.dishes}/>}/>{/* to pass parameters to the comp using the routing using an arrow function. */}
+   
+         <Redirect to="/home"/> {/* anything doesnt match the routes will be redirected to the home. */}
+       </Switch>
       <Footer/>
         </div>
     )
