@@ -5,11 +5,11 @@ import {Card,CardImg,CardImgOverlay,CardText,CardBody,CardTitle} from 'reactstra
 
   
     
-    function RenderMenuItem({dish,onClick})// the arguements passed to the fx is a object or we can give props also
+    function RenderMenuItem({dish})// the arguements passed to the fx is a object or we can give props also
     // props={dish,onClick}
     {
         return(
-            <Card onClick={()=>onClick(dish.id)}>{/* here onclickp is a function passed */}
+            <Card>{/* here onclickp is a function passed */}
                     <CardImg src={dish.image} alt={dish.name}>
                         
                     </CardImg>
